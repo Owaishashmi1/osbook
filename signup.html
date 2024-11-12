@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store - Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="img/book-store-logo.jpg">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Pacifico|Roboto");
+
+
+h1.logo {
+  color: #59ab6e;
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  margin-bottom:1em;}
+
+h1.end {
+  position: relative;
+  color: #59ab6e;
+  opacity: 0;
+  transition: 0.8s ease-in-out; }
+
+#container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center; }
+
+#form-box {
+  background: #fff;
+  position: relative;
+  width: 600px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.1), 0 6px 10px 5px rgba(0, 0, 0, 0.1), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease-in-out; }
+
+#form-box.close {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0); }
+
+#next-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 40px;
+  color: #59ab6e;
+  float: right;
+  cursor: pointer;
+  z-index: 2; }
+  #next-btn:hover {
+    color: #b9d4ec; }
+
+#prev-btn {
+  position: absolute;
+  font-size: 18px;
+  left: 30px;
+  top: 12px;
+  z-index: 2;
+  color: #9e9e9e;
+  float: right;
+  cursor: pointer; }
+  #prev-btn:hover {
+    color: #b9d4ec; }
+
+#input-group {
+  position: relative;
+  padding: 30px 20px 20px 20px;
+  margin: 10px 60px 10px 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; }
+  #input-group input {
+    position: relative;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: 0;
+    background: transparent;
+    box-shadow: none; }
+  #input-group #input-label {
+    position: absolute;
+    pointer-events: none;
+    top: 32px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s ease-in-out; }
+  #input-group input:valid + #input-label {
+    top: 6px;
+    left: 42px;
+    margin-left: 0 !important;
+    font-size: 11px;
+    font-weight: normal;
+    color: #9e9e9e; }
+
+#input-progress {
+  border-bottom: 3px solid #59ab6e;
+  width: 0;
+  transition: width 0.6s ease-in-out; }
+
+#progress-bar {
+  position: absolute;
+  background: #b9d4ec;
+  height: 10px;
+  width: 0;
+  transition: width 0.5s ease-in-out; }
+
+.close #next-btn,
+.close #prev-btn {
+  color: #fff; }
+
+.error #input-progress {
+  border-color: #ff2d26; }
+
+.error #next-btn {
+  color: #ff2d26; }
+
+@media (max-width: 600px) {
+  #form-box {
+    width: 80%; } }
+    </style>
+
+
+    </style>
+    
+</head>
+<body>
+       <!-- Start Top Nav -->
+       <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">info@OnlineBookStore.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="#">Call No:021_23456789</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+             Book Store
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">All Book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Login.html">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                   
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+
+
+
+
+<!--login-->
+<div id="container" >
+    <h1 class="logo" style="margin-top: 30px; font-size: 40px;">Online Book Store</h1>
+      
+     
+    <div id="form-box">
+      <i id="prev-btn" class="fas fa-arrow-left"></i>
+      <i id="next-btn" class="fas fa-arrow-right"></i>
+      <div id="input-group">
+        <input id="input-field" required>
+        <label id="input-label"></label>
+        <div id="input-progress"></div>
+      </div>
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
+<script type="text/javascript">
+	// Questions Array
+const questions = [
+  { question: 'Enter Your First Name' },
+  { question: 'Enter Your Last Name' },
+  { question: 'Enter Your Email', pattern: /\S+@\S+\.\S+/ },
+  { question: 'Create A Password', type: 'password' }
+];
+
+// Transition Times
+const shakeTime = 100; // Shake Transition Time
+const switchTime = 200; // Transition Between Questions
+
+// Init Position At First Question
+  let position=0;
+
+// Init DOM Elements
+const formBox = document.querySelector('#form-box');
+const nextBtn = document.querySelector('#next-btn');
+const prevBtn = document.querySelector('#prev-btn');
+const inputGroup = document.querySelector('#input-group');
+const inputField = document.querySelector('#input-field');
+const inputLabel = document.querySelector('#input-label');
+const inputProgress = document.querySelector('#input-progress');
+const progress = document.querySelector('#progress-bar');
+
+// EVENTS
+
+// Get Question On DOM Load
+document.addEventListener('DOMContentLoaded', getQuestion);
+
+// Next Button Click
+nextBtn.addEventListener('click', validate);
+
+// Input Field Enter Click
+inputField.addEventListener('keyup', e => {
+  if (e.keyCode == 13) {
+    validate();
+  }
+});
+
+// FUNCTIONS
+
+// Get Question From Array & Add To Markup
+function getQuestion() {
+  // Get Current Question
+  inputLabel.innerHTML = questions[position].question;
+  // Get Current Type
+  inputField.type = questions[position].type || 'text';
+  // Get Current Answer
+  inputField.value = questions[position].answer || '';
+  // Focus On Element
+  inputField.focus();
+
+  // Set Progress Bar Width - Variable to the questions length
+  progress.style.width = (position * 100) / questions.length + '%';
+
+  // Add User Icon OR Back Arrow Depending On Question
+  prevBtn.className = position ? 'fas fa-arrow-left' : 'fas fa-user';
+
+  showQuestion();
+}
+
+// Display Question To User
+function showQuestion() {
+  inputGroup.style.opacity = 1;
+  inputProgress.style.transition = '';
+  inputProgress.style.width = '100%';
+}
+
+// Hide Question From User
+function hideQuestion() {
+  inputGroup.style.opacity = 0;
+  inputLabel.style.marginLeft = 0;
+  inputProgress.style.width = 0;
+  inputProgress.style.transition = 'none';
+  inputGroup.style.border = null;
+}
+
+// Transform To Create Shake Motion
+function transform(x, y) {
+  formBox.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+// Validate Field
+function validate() {
+  // Make Sure Pattern Matches If There Is One
+  if (!inputField.value.match(questions[position].pattern || /.+/)) {
+    inputFail();
+  } else {
+    inputPass();
+  }
+}
+
+// Field Input Fail
+function inputFail() {
+  formBox.className = 'error';
+  // Repeat Shake Motion -  Set i to number of shakes
+  for (let i = 0; i < 6; i++) {
+    setTimeout(transform, shakeTime * i, ((i % 2) * 2 - 1) * 20, 0);
+    setTimeout(transform, shakeTime * 6, 0, 0);
+    inputField.focus();
+  }
+}
+
+// Field Input Passed
+function inputPass() {
+  formBox.className = '';
+  setTimeout(transform, shakeTime * 0, 0, 10);
+  setTimeout(transform, shakeTime * 1, 0, 0);
+
+  // Store Answer In Array
+  questions[position].answer = inputField.value;
+
+  // Increment Position
+  position++;
+
+  // If New Question, Hide Current and Get Next
+  if (questions[position]) {
+    hideQuestion();
+    getQuestion();
+  } else {
+    // Remove If No More Questions
+    hideQuestion();
+    formBox.className = 'close';
+    progress.style.width = '100%';
+
+    // Form Complete
+    formComplete();
+  }
+}
+
+// All Fields Complete - Show h1 end
+function formComplete() {
+  const h1 = document.createElement('h1');
+  h1.classList.add('end');
+  h1.appendChild(
+    document.createTextNode(
+      `Thanks ${
+        questions[0].answer
+      } You are registered and will get an email shortly`
+    )
+  );
+  setTimeout(() => {
+    formBox.parentElement.appendChild(h1);
+    setTimeout(() => (h1.style.opacity = 1), 50);
+  }, 1000);
+}
+	</script>
+
+<!--login end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Start Footer -->
+   <footer class="bg-dark" id="tempaltemo_footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-success border-bottom pb-3 border-light logo">Book Store</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                        Karachi,Pakistan
+                    </li>
+                    <li>
+                        <i class="fa fa-phone fa-fw"></i>
+                        <a class="text-decoration-none" href="#">Call No:021-2346789</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope fa-fw"></i>
+                        <a class="text-decoration-none" href="#">info@OnlineBookStore.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Books</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="buinessmain.html">Business Books</a></li>
+                    <li><a class="text-decoration-none" href="#">Crime Books</a></li>
+                    <li><a class="text-decoration-none" href="#">Drama Books</a></li>
+                    <li><a class="text-decoration-none" href="#">Funny Books</a></li>
+                    <li><a class="text-decoration-none" href="#">History Of Animals Books</a></li>
+                    <li><a class="text-decoration-none" href="#">Horror Books</a></li>
+                    <li><a class="text-decoration-none" href="#">Urdu Poetry Books</a></li>
+                    <li><a class="text-decoration-none" href="#"> Political Books</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Page Info</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                  <li><a class="text-decoration-none" href="index.html">Home</a></li>
+                  <li><a class="text-decoration-none" href="about.html">About Us</a></li>
+                  <li><a class="text-decoration-none" href="shop.html">All Books</a></li>
+                  <li><a class="text-decoration-none" href="Login.html">Log In</a></li>
+                  <li><a class="text-decoration-none" href="signup.html">Sign Up</a></li>
+                  <li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+        </div>
+
+        <div class="row text-light mb-4">
+            <div class="col-12 mb-3">
+                <div class="w-100 my-3 border-top border-light"></div>
+            </div>
+            <div class="col-auto me-auto">
+                <ul class="list-inline text-left footer-icons">
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i style="color: rgb(10, 94, 220);" class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i style="color: rgb(199, 47, 169);" class="fab fa-instagram fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i style="color: rgb(10, 94, 220);" class="fab fa-twitter fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i style="color: rgb(16, 41, 187);" class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="w-100 bg-black py-3">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-12">
+                    <p class="text-left text-light">
+                        Copyright &copy; 2021 OnlineBookStore 
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- End Footer -->
+
+        <!-- Start Script -->
+        <script src="assets/js/jquery-1.11.0.min.js"></script>
+        <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/templatemo.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <!-- End Script -->
+</body>
+</html>
